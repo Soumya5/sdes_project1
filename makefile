@@ -13,4 +13,4 @@ report_project1.bbl report_project1.blg: report_project1.bib
 	bibtex report_project1
 
 clean:
-	rm -f *.aux *.log *.blg *.bbl *.png *.html *.toc *.pdf
+	rm -f *.aux *.log *.blg *.bbl *.png *.html *.toc 
