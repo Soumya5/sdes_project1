@@ -1,7 +1,7 @@
 %Author name: SOUMYA DUTTA
 %Roll Number: 15307R001
 
-\documentclass{article}
+\documentclass[a4paper]{article}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
@@ -17,11 +17,13 @@ Roll number-15307R001}
 \clearpage
 \tableofcontents
 \clearpage
-\begin{abstract}
+
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
     In this paper we discuss the basics of the oscillator called Van Der Pol Oscillator. The governing differential equation is solved using a
     the ordinary differential equation solver of Scipy package of Python. There is a variable parameter in the differential equation which we
     denote by $\mu$. Two plots are provided, one for the states and another for the phase potrait.
-\end{abstract}
+
 \section{Introduction}
 The Van der Pol oscillator was originally proposed by the Dutch electrical engineer and physicist Balthasar van der Pol while he was working at Philips \cite{van}. Van Der Pol found stable oscillations, which he called \textbf{relaxation oscillations} and are now known as a type of limit cycle in electrical circuits employing vacuum tubes. When these circuits were driven near the limit cycle, they become entrained, that is the driving signal pulls the current along with it.The Van Der Pol oscillator is a non-conservative oscillator with non-linear damping. \\
 The governing differential equation of the oscillator is as follows :-
@@ -40,7 +42,7 @@ apart from \textbf{Python 2.7.12}.
     \item{scipy 0.17.0}-the Ordinary Differential Equation solver of Python is available in this package
     \item{matplotlib 1.5.1}-Required for plotting the two relevant states of the oscillator namely $x(t)$ and $\dot{x(t)}$
 \end{itemize}
-The source code that has been is available in \url{https://github.com/Soumya5/sdes_project1/blob/master/15307R001_python_figures.py}. After solving the differential equation we plot two figures-the evolution of states with time and the phase plot of the oscillator. The plots are shown:-
+The source code that has been is available in \url{https://github.com/Soumya5/sdes_project1}.After solving the differential equation we plot two figures-the evolution of states with time and the phase plot of the oscillator. The plots are shown:-
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.3]{Plot_of_states.png}
@@ -51,7 +53,7 @@ The source code that has been is available in \url{https://github.com/Soumya5/sd
     \includegraphics[scale=0.3]{Phase_plot.png}
     \caption{Phase plot of oscillator}
 \end{figure}
-An animation file of how the states vary with time has also been created. The animation can be viewed from here\href{./vanderpol_animation.html}.
+An animation file of how the states vary with time has also been created. The animation can be viewed from here \url{./vanderpol_animation.html}.
 \section{Uses}
 The Van der pol equation has been used extensively in physical and biological sciences.
 \begin{itemize}
@@ -60,6 +62,6 @@ The Van der pol equation has been used extensively in physical and biological sc
     \item This equation has also been used in studies of phonation to model the right and left vocal fold oscillators \cite{phonation}
 \end{itemize}
 \bibliography{report_project1}{}
+\addcontentsline{toc}{section}{References}
 \bibliographystyle{plain}
-
 \end{document}
