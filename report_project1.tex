@@ -1,0 +1,65 @@
+%Author name: SOUMYA DUTTA
+%Roll Number: 15307R001
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\begin{document}
+\title{Van Der Pol Oscillator}
+\author{Soumya Dutta\\
+Roll number-15307R001}
+\date{\today}
+\maketitle
+\clearpage
+\tableofcontents
+\clearpage
+\begin{abstract}
+    In this paper we discuss the basics of the oscillator called Van Der Pol Oscillator. The governing differential equation is solved using a
+    the ordinary differential equation solver of Scipy package of Python. There is a variable parameter in the differential equation which we
+    denote by $\mu$. Two plots are provided, one for the states and another for the phase potrait.
+\end{abstract}
+\section{Introduction}
+The Van der Pol oscillator was originally proposed by the Dutch electrical engineer and physicist Balthasar van der Pol while he was working at Philips \cite{van}. Van Der Pol found stable oscillations, which he called \textbf{relaxation oscillations} and are now known as a type of limit cycle in electrical circuits employing vacuum tubes. When these circuits were driven near the limit cycle, they become entrained, that is the driving signal pulls the current along with it.The Van Der Pol oscillator is a non-conservative oscillator with non-linear damping. \\
+The governing differential equation of the oscillator is as follows :-
+\begin{equation}\label{eq1}
+    \ddot{x}-\mu (1-x^{2}) \dot{x} + x=0
+\end{equation}
+In Eq.\ref{eq1} \textit{x} represents the position which varies with time, and $\mu$ is a scalar parameter which represents non-linearity and 
+strength of damping.
+\section{Solving the differential equation}
+The governing equation of the oscillator that is given by Eq.\ref{eq1} is solved in Python. For this the following packages are required 
+apart from \textbf{Python 2.7.12}.
+\begin{itemize}
+    \item{GNU Make 4.1}
+    \item{pdflatex Version 3.14159265-2.6-1.40.16} 
+    \item{numpy 1.11.0}-all the solutions of the equation are to be stored in array format which becomes available via this package
+    \item{scipy 0.17.0}-the Ordinary Differential Equation solver of Python is available in this package
+    \item{matplotlib 1.5.1}-Required for plotting the two relevant states of the oscillator namely $x(t)$ and $\dot{x(t)}$
+\end{itemize}
+The source code that has been is available in \url{https://github.com/Soumya5/sdes_project1/blob/master/15307R001_python_figures.py}. After solving the differential equation we plot two figures-the evolution of states with time and the phase plot of the oscillator. The plots are shown:-
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{Plot_of_states.png}
+    \caption{Plot of states versus time}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{Phase_plot.png}
+    \caption{Phase plot of oscillator}
+\end{figure}
+An animation file of how the states vary with time has also been created. The animation can be viewed from here\href{./vanderpol_animation.html}.
+\section{Uses}
+The Van der pol equation has been used extensively in physical and biological sciences.
+\begin{itemize}
+    \item In biology, Fitzhugh and Nagumo extended the equation in a planar field as a model for action potentials of neurons \cite{fitz}, \cite{nagumo1962}
+    \item The equation has been utilised in seismology to model the two plates in a geological fault \cite{seis}
+    \item This equation has also been used in studies of phonation to model the right and left vocal fold oscillators \cite{phonation}
+\end{itemize}
+\bibliography{report_project1}{}
+\bibliographystyle{plain}
+
+\end{document}
