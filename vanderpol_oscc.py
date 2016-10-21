@@ -2,14 +2,20 @@ import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 import numpy as np
 
-def function(Y,t):
+#This mu needs to be changed for changing the parameter
+mu=0.2
+
+#For changing the initial conditions please change init_cond: init_cond[0]=x(t), init_cond[1]=dx(t)/dt
+init_cond=[0,-1]
+
+def function(init_cond,t):
 
     '''
     This function returns the differential equations using two states
     the state x(t) and its derivative
     '''
-    x1=Y[1]
-    x2=mu*(1-(Y[0]**2))*Y[1]-Y[0]
+    x1=init_cond[1]
+    x2=mu*(1-(init_cond[0]**2))*init_cond[1]-init_cond[0]
     f=[x1,x2]
     return f
     
@@ -17,8 +23,8 @@ def state_plot(sol,t):
 
     '''
     This function creates the plot of the two states-x(t) and dx(t)/dt vs time. 
-    Different options for customizing the plot features are also provided in this 
-    function.
+    Different options for customizing the plot features are also provided in
+    this function.
     '''
     fig=plt.figure(1)
     plt.clf()
@@ -56,17 +62,12 @@ def main():
     '''
     solves the differential equation and creates the two required plots
     '''
-    global sol
     t=np.linspace(0,50,10000)
-    sol=odeint(function,Y,t)
+    sol=odeint(function,init_cond,t)
     state_plot(sol,t)
     phase_plot(sol)
-    
-       
-global mu
-global sol
-Y=[0,-1]
-mu=5
-main()
+
+if __name__ == '__main__':    
+    main()
 
 
