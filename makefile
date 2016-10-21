@@ -1,16 +1,25 @@
-report_project1.pdf: Phase_plot.png Plot_of_states.png report_project1.tex report_project1.bbl report_project1.blg vanderpol_animation.html
-	pdflatex report_project1.tex
-	pdflatex report_project1.tex
+source/15307r001.pdf: source/Phase_plot.png source/Plot_of_states.png source/15307r001.tex source/15307r001.bbl source/15307r001.blg source/15307r001.html
+	cd source && pdflatex 15307r001.tex
+	cd source && pdflatex 15307r001.tex
+	mv source/15307r001.pdf output/15307r001.pdf
 
-vanderpol_animation.html: vanderpol_animation.ipynb
-	ipython nbconvert vanderpol_animation.ipynb
+source/15307r001.html: source/15307r001.ipynb
+	cd source && ipython nbconvert 15307r001.ipynb
+	mkdir output
+	mv source/15307r001.html output/15307r001.html
+	
+source/Phase_plot.png source/Plot_of_states.png: source/vanderpol_oscc.py
+	cd source && python vanderpol_oscc.py
 
-Phase_plot.png Plot_of_states.png: 15307R001_python_figures.py
-	python 15307R001_python_figures.py
+source/15307r001.bbl source/15307r001.blg: source/15307r001.bib
+	cd source && pdflatex 15307r001.tex
+	cd source && bibtex 15307r001
 
-report_project1.bbl report_project1.blg: report_project1.bib
-	pdflatex report_project1.tex
-	bibtex report_project1
+test:
+	cd source && python test_vanderpol_oscc.py
+
+.PHONY: clean
 
 clean:
-	rm -f *.aux *.log *.blg *.bbl *.png *.html *.toc 
+	cd source && rm -f *.aux *.log *.blg *.bbl *.png *.toc  *.pyc *.html
+	rm -rf output
