@@ -3,7 +3,7 @@ from scipy.integrate import odeint
 import numpy as np
 
 #This mu needs to be changed for changing the parameter
-mu=0.2
+mu=5
 
 #For changing the initial conditions please change init_cond: init_cond[0]=x(t), init_cond[1]=dx(t)/dt
 init_cond=[0,-1]
@@ -33,7 +33,7 @@ def state_plot(sol,t):
     line2, = plt.plot(t, sol[:,1], 'D-', label='dx/dt', linewidth=2,
                       markersize=1, markeredgewidth=1,color='b')
     plt.grid()
-    plt.title("Plot of x(t) and dx(t)/dt vs Time with mu="+str(mu),fontname='serif',fontsize=14)
+    plt.title("Plot of x(t) and dx(t)/dt vs Time with mu= "+str(mu)+"roll 15307r001",fontname='serif',fontsize=14)
     plt.xlabel("Time",fontname='serif',fontsize=12)
     plt.xticks(range(0, 50)[::2], family='serif', fontsize=8)
     plt.ylabel("States",fontname='serif',fontsize=12)
@@ -51,7 +51,7 @@ def phase_plot(sol):
     plt.clf() 
     plt.grid()
     plt.plot(sol[:,0], sol[:,1], linewidth=2, label='Phase Plot')
-    plt.title('Phase Plot with mu='+str(mu), fontname='serif', fontsize=14)
+    plt.title('Phase Plot with mu= '+str(mu)+"roll 15307r001", fontname='serif', fontsize=14)
     plt.xlabel('x', fontname='serif', fontsize=12)
     plt.ylabel('dx/dt', fontname='serif', fontsize=12)
     plt.savefig('Phase_plot.png')  
