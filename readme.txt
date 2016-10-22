@@ -1,13 +1,13 @@
 Author:- Soumya Dutta
 ----------------------------------------------------------------------------------------------------------
-Content:- Python file- source/vanderpol_oscc.py- Contains code for generating figures of states and phase plot 
+Content:- Python file- 15307r001/source/vanderpol_oscc.py- Contains code for generating figures of states and phase plot 
           of vanderpol oscillator for parameters modifiable by user.
           
-          Python file- source/test_vanderpol_oscc.py- Contains tests for the above file
+          Python file- 15307r001/source/test_vanderpol_oscc.py- Contains tests for the above file
           
-          source/15307r001.tex and source/15307r001.bib- Generates pdf file containing report on Vanderpol Oscillator
+          15307r001/source/15307r001.tex and 15307r001/source/15307r001.bib- Generates pdf file containing report on Vanderpol Oscillator
           
-          source/15307r001.ipynb- Notebook containing the animations of the Vanderpol oscillator
+          15307r001/source/15307r001.ipynb- Notebook containing the animations of the Vanderpol oscillator
           
           makefile-contains the makefile for doing all the things at one go
 ----------------------------------------------------------------------------------------------------------          
